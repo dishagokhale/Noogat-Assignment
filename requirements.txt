@@ -1,0 +1,6 @@
+python-pptx
+Pillow
+pytesseract
+requests
+python-dateparser
+python-dotenv
