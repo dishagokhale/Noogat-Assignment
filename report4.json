@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "file": "/Users/dishagokhale38/Downloads/Noogat/deck1.pptx",
+    "slides_analyzed": 17,
+    "total_issues_found": 5,
+    "analysis_method": "LLM_comprehensive",
+    "llm_model": "gemini-2.0-flash-exp",
+    "timestamp": "2025-08-11 22:58:00"
+  },
+  "issues": [
+    {
+      "issue_type": "InconsistencyType.GRAMMATICAL",
+      "slide_a": 2,
+      "slide_b": 2,
+      "snippet_a": "The raw format of the documents are typically of sizes of few MBs.",
+      "snippet_b": "The raw format of the documents are typically of sizes of few MBs.",
+      "context_a": "The documents are generally in the image format uploaded by the customers themselves. The raw format of the documents are typically of sizes of few MBs.",
+      "context_b": "The documents are generally in the image format uploaded by the customers themselves. The raw format of the documents are typically of sizes of few MBs.",
+      "confidence": 0.95,
+      "explanation": "The phrase 'sizes of few MBs' is grammatically incorrect. It should be 'sizes of a few MBs' or 'sizes of several MBs' to correctly quantify 'MBs'.",
+      "details": {}
+    },
+    {
+      "issue_type": "InconsistencyType.GRAMMATICAL",
+      "slide_a": 6,
+      "slide_b": 6,
+      "snippet_a": "Although PCA would help to achieve the desired goal, but there are advanced methods which can optimize the compression.",
+      "snippet_b": "Although PCA would help to achieve the desired goal, but there are advanced methods which can optimize the compression.",
+      "context_a": "Although PCA would help to achieve the desired goal, but there are advanced methods which can optimize the compression. GAN (Generative Adversarial Network) Azure CDN (Content Delivery Network)",
+      "context_b": "Although PCA would help to achieve the desired goal, but there are advanced methods which can optimize the compression. GAN (Generative Adversarial Network) Azure CDN (Content Delivery Network)",
+      "confidence": 0.95,
+      "explanation": "The use of 'Although... but' in the same sentence is redundant and grammatically incorrect. One conjunction should be removed (e.g., 'Although PCA would help..., there are advanced methods...' or 'PCA would help..., but there are advanced methods...').",
+      "details": {}
+    },
+    {
+      "issue_type": "InconsistencyType.LOGICAL",
+      "slide_a": 11,
+      "slide_b": 11,
+      "snippet_a": "Reduced latency",
+      "snippet_b": "POST and FETCH operations should be available for multiple concurrent users without latency.",
+      "context_a": "FR (Functional Requirements)\nReduced latency\nResponse time should be less than 1 minute\nMinimum system overhead\nHigh compression ratio\nNo significant reduction in image resolution\nPOST and FETCH operations should be available for multiple concurrent users without latency.",
+      "context_b": "FR (Functional Requirements)\nReduced latency\nResponse time should be less than 1 minute\nMinimum system overhead\nHigh compression ratio\nNo significant reduction in image resolution\nPOST and FETCH operations should be available for multiple concurrent users without latency.",
+      "confidence": 0.95,
+      "explanation": "The requirement 'Reduced latency' implies that some latency is acceptable, but it should be minimized. This contradicts the subsequent requirement 'without latency,' which implies zero latency, an absolute state that is practically impossible to achieve in real-world systems.",
+      "details": {}
+    },
+    {
+      "issue_type": "InconsistencyType.LOGICAL",
+      "slide_a": 11,
+      "slide_b": 11,
+      "snippet_a": "ACID/BASE principle should be followed",
+      "snippet_b": "ACID/BASE principle should be followed",
+      "context_a": "FR (Functional Requirements)\nReduced latency\nResponse time should be less than 1 minute\nMinimum system overhead\nHigh compression ratio\nNo significant reduction in image resolution\nPOST and FETCH operations should be available for multiple concurrent users without latency.\nACID/BASE principle should be followed\nHighly scalable database",
+      "context_b": "FR (Functional Requirements)\nReduced latency\nResponse time should be less than 1 minute\nMinimum system overhead\nHigh compression ratio\nNo significant reduction in image resolution\nPOST and FETCH operations should be available for multiple concurrent users without latency.\nACID/BASE principle should be followed\nHighly scalable database",
+      "confidence": 0.95,
+      "explanation": "ACID (Atomicity, Consistency, Isolation, Durability) and BASE (Basically Available, Soft state, Eventually consistent) are fundamentally different and often mutually exclusive database consistency models. A system typically adheres to one or the other, not both simultaneously, as they represent different trade-offs in consistency versus availability.",
+      "details": {}
+    },
+    {
+      "issue_type": "InconsistencyType.TEXTUAL",
+      "slide_a": 13,
+      "slide_b": 13,
+      "snippet_a": "Most optimized model selected for the implementation of the solution.",
+      "snippet_b": "PCA implemented as of now, but the final model would be based on GAN which would improve the compression efficiency.",
+      "context_a": "Reason why the solution should be considered\nMost optimized model selected for the implementation of the solution.\nPCA implemented as of now, but the final model would be based on GAN which would improve the compression efficiency.",
+      "context_b": "Reason why the solution should be considered\nMost optimized model selected for the implementation of the solution.\nPCA implemented as of now, but the final model would be based on GAN which would improve the compression efficiency.",
+      "confidence": 0.95,
+      "explanation": "The statement 'Most optimized model selected for the implementation of the solution' directly conflicts with the subsequent statement that 'PCA implemented as of now, but the final model would be based on GAN which would improve the compression efficiency.' This implies that either the most optimized model has not yet been selected/implemented, or PCA is not the most optimized, contradicting the initial claim.",
+      "details": {}
+    }
+  ],
+  "issues_by_type": {
+    "grammatical_error": 2,
+    "logical_contradiction": 2,
+    "textual_contradiction": 1
+  },
+  "slides_content": [
+    {
+      "slide_no": 1,
+      "text": "Image Document Optimization - SBI\n\nPowered By - Microsoft Corporation Pvt Ltd.\nTEAM KALAM\nAbha Porwal\nSambit Kumar Mishra"
+    },
+    {
+      "slide_no": 2,
+      "text": "Problem Being Solved\nThe customers of SBI are increasing on a daily basis. This increase in the number results in increase in the size of the database required to store the documents of the customers.\nThe documents are generally in the image format uploaded by the customers themselves.\nThe raw format of the documents are typically of sizes of few MBs.\nStoring the raw format of the uploaded data in the database is an inefficient approach because it increases the POST and FETCH latency. It also increases the cost of maintaining the database.\nScaling is very inefficient if such inefficient storage methods are implemented."
+    },
+    {
+      "slide_no": 3,
+      "text": "Approach taken to create the model\nThe major focus is kept on reducing the size and white space of the document without compromising with the quality much.\n\nThere are various options available for image compression like -\nK-Means Clustering\nPCA\nGAN\nComputer Vision\nAzure CDN"
+    },
+    {
+      "slide_no": 4,
+      "text": "Approach taken to create the model\nAmong the various possible approaches, the implementation of the solution is currently done using PCA. \nPrincipal Component Analysis or PCA is a method of reducing the dimensions of the given dataset while still retaining most of its variance. \nEg. In one of the iterations, the original image of an ID Card of size 1.5 MB was compressed to 45 KB without significant loss of resolution of text and image in the ID."
+    },
+    {
+      "slide_no": 5,
+      "text": "PCA Model Visualization"
+    },
+    {
+      "slide_no": 6,
+      "text": "Approach for improvement of model\nAlthough PCA would help to achieve the desired goal, but there are advanced methods which can optimize the compression.\nGAN (Generative Adversarial Network)\nAzure CDN (Content Delivery Network)\nGAN is one of the advanced methods.\nAzure CDN (Content Delivery Network) can also be leveraged to achieve significant image compression without losing the quality significantly."
+    },
+    {
+      "slide_no": 7,
+      "text": "GAN (Generative Adversarial Network)\nGANs are generative models: they create new data instances that resemble your training data.\nGANs achieve this level of realism by pairing a generator, which learns to produce the target output, with a discriminator, which learns to distinguish true data from the output of the generator. The generator tries to fool the discriminator, and the discriminator tries to keep from being fooled."
+    },
+    {
+      "slide_no": 8,
+      "text": "GAN (Generative Adversarial Network)"
+    },
+    {
+      "slide_no": 9,
+      "text": "Azure CDN (Content Delivery Network)\nEnable compression on your origin server. In this case, Azure CDN passes along the compressed files and delivers them to clients that request them.\nEnable compression directly on the CDN POP servers (compression on the fly). In this case, the CDN compresses the files and serves them to the end users, even if they were not compressed by the origin server."
+    },
+    {
+      "slide_no": 10,
+      "text": "Azure CDN (Content Delivery Network)"
+    },
+    {
+      "slide_no": 11,
+      "text": "FR (Functional Requirements)\nReduced latency \nResponse time should be less than 1 minute\nMinimum system overhead\nHigh compression ratio\nNo significant reduction in image resolution\nPOST and FETCH operations should be available for multiple concurrent users without latency.\nACID/BASE principle should be followed\nHighly scalable database"
+    },
+    {
+      "slide_no": 12,
+      "text": "NFR (Non-Functional Requirements)\nImproved UI and UX\nHints and instructions in the webpage for guiding the new customers\nTimely removal of documents of ex-users from the database to free up space\nSuccess/Failure message to the customer after uploading the documents"
+    },
+    {
+      "slide_no": 13,
+      "text": "Reason why the solution should be considered\nMost optimized model selected for the implementation of the solution.\nPCA implemented as of now, but the final model would be based on GAN which would improve the compression efficiency.\nEntire database size will reduce significantly.\nThis method is applicable to all the types of document images uploaded by the user."
+    },
+    {
+      "slide_no": 14,
+      "text": "Source code (Github Repository Link)\nhttps://www.github.com/MAVIN-07/sbi-hackathon/"
+    },
+    {
+      "slide_no": 15,
+      "text": "Working of the solution.\nThe proposed PCA model works in the following manner -\nRead image\nSplitting the image into BGR\nNormalizing the BGR Components\nTransforming BGR into PCA  with 50 Components\nInverse transformation of BGR and reducing the image"
+    },
+    {
+      "slide_no": 16,
+      "text": "OUTPUT OF THE PROPOSED MODEL"
+    },
+    {
+      "slide_no": 17,
+      "text": "Submitted By : Abha Porwal , Sambit Kumar Mishra\nEmail : abhaporwal12@gmail.com , sambitmishra1968@gmail.com \nMobile No: 9111027570 , 9630185553\n"
+    }
+  ]
+}
